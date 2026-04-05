@@ -22,6 +22,7 @@
             --accent-gold: #c9b896;
             --accent-qimen: #e89a4f;
             --accent-ziwei: #8b8bff;
+            --accent-bazi: #6dd3b5;
 
             /* Typography */
             --font-display: 'Cormorant', serif;
@@ -323,7 +324,7 @@
         /* Comparison Table Grid */
         .compare-grid {
             display: grid;
-            grid-template-columns: minmax(80px, 1fr) 2fr 2fr;
+            grid-template-columns: minmax(80px, 1fr) 2fr 2fr 2fr;
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px;
             overflow: hidden;
@@ -342,6 +343,7 @@
         }
         .cg-header.qimen { color: var(--accent-qimen); }
         .cg-header.ziwei { color: var(--accent-ziwei); }
+        .cg-header.bazi  { color: var(--accent-bazi); }
         .cg-cell {
             padding: clamp(0.8rem, 1.5vh, 1.2rem) clamp(1rem, 2vw, 1.5rem);
             font-size: clamp(0.8rem, 1.1vw, 0.95rem);
@@ -355,7 +357,7 @@
             align-items: center;
             text-align: center;
         }
-        .cg-cell:nth-child(3n) { border-right: none; }
+        .cg-cell:nth-child(4n) { border-right: none; }
         .cg-row-last .cg-cell { border-bottom: none; }
         .cg-label {
             font-weight: 600;
@@ -375,6 +377,7 @@
         }
         .tag-orange { color: var(--accent-qimen); background: rgba(232, 154, 79, 0.1); }
         .tag-purple { color: var(--accent-ziwei); background: rgba(139, 139, 255, 0.1); }
+        .tag-mint   { color: var(--accent-bazi);  background: rgba(109, 211, 181, 0.12); }
         .tag-green  { color: #5fe88a; background: rgba(10, 32, 10, 0.4); }
         .tag-gray   { color: #aaa; background: rgba(255, 255, 255, 0.05); }
 
@@ -452,7 +455,7 @@
         }
         @media (max-width: 600px), (max-height: 600px) {
             .flow-grid .glass-card { min-width: calc(50% - 0.5rem); padding: 1rem; }
-            .compare-grid { grid-template-columns: 70px 1fr 1fr; }
+            .compare-grid { grid-template-columns: 70px 1fr 1fr 1fr; }
             .cg-cell { padding: 0.5rem; }
             .tag { display: block; width: max-content; margin: 0 auto 4px auto; }
             .vflow-item { gap: 0.5rem; }
@@ -471,8 +474,8 @@
         <div class="slide-content center-container">
             <div class="container center-container">
                 <p class="page-title reveal">传统术数与 AI 架构解构</p>
-                <h1 class="reveal">两套玄学系统，同一工程视角</h1>
-                <p class="page-sub reveal">奇门遁甲 × 紫微斗数 · 从结构化访谈到能力边界的防御性设计</p>
+                <h1 class="reveal">三套玄学系统，同一工程视角</h1>
+                <p class="page-sub reveal">奇门遁甲 × 紫微斗数 × 子平八字 · 从结构化访谈到能力边界的防御性设计</p>
             </div>
         </div>
     </section>
@@ -639,40 +642,83 @@
         </div>
     </section>
 
-    <!-- Slide 6: Compare Table 1 -->
+    <!-- Slide 6: Bazi Flow -->
+    <section class="slide">
+        <div class="slide-content">
+            <div class="container">
+                <p class="section-label reveal">图 2 · 子平八字</p>
+                <h2 class="section-title reveal">定盘 → 强弱 → 取用 → 岁运应期</h2>
+                <p class="section-desc reveal">核心规则：先把四柱定准，再判断日主强弱与格局，不允许反向“先结论后找证据”。</p>
+
+                <div class="flow-grid">
+                    <div class="glass-card reveal" style="border-color: rgba(109,211,181,0.35);">
+                        <div class="step-num">01</div>
+                        <div class="step-title" style="color:var(--accent-bazi);">四柱定盘</div>
+                        <div class="step-detail">统一口径：历法、时区、子时换日、节气边界先确认，参数不齐全即先补参不硬断。</div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="step-num">02</div>
+                        <div class="step-title">日主强弱与月令权重</div>
+                        <div class="step-detail">以月令为纲，结合通根、透干、制化与寒暖燥湿，判断结构承载力。</div>
+                    </div>
+                    <div class="glass-card reveal" style="border-color: rgba(109,211,181,0.35);">
+                        <div class="step-num">03</div>
+                        <div class="step-title" style="color:var(--accent-bazi);">十神结构与体用</div>
+                        <div class="step-detail">识别主导十神链路，拆清“体”与“用”，避免单点神煞替代系统性判断。</div>
+                    </div>
+                    <div class="glass-card reveal">
+                        <div class="step-num">04</div>
+                        <div class="step-title">格局校验与冲突并列</div>
+                        <div class="step-detail">多口径冲突时并列说明触发条件，不能把不同流派规则混写成一个答案。</div>
+                    </div>
+                    <div class="glass-card reveal" style="border-color: rgba(109,211,181,0.35);">
+                        <div class="step-num">05</div>
+                        <div class="step-title" style="color:var(--accent-bazi);">岁运应期输出</div>
+                        <div class="step-detail">按大运→流年→流月给出行动建议与风险提示，强调概率而非宿命句式。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Compare Table 1 -->
     <section class="slide">
         <div class="slide-content">
             <div class="container">
                 <p class="section-label reveal">图 3 · 系统对比 (上)</p>
-                <h2 class="section-title reveal">奇门遁甲 vs 紫微斗数</h2>
-                <p class="section-desc reveal">一个是实时事件的微观决策支持，一个是生命宏观结构的深度解析。</p>
+                <h2 class="section-title reveal">奇门遁甲 vs 紫微斗数 vs 子平八字</h2>
+                <p class="section-desc reveal">分别对应实时事件、先天盘结构与命理能量系统的三种解题路径。</p>
 
                 <div class="compare-grid reveal">
                     <!-- Headers -->
                     <div class="cg-header">维度</div>
                     <div class="cg-header qimen">奇门遁甲</div>
                     <div class="cg-header ziwei">紫微斗数</div>
+                    <div class="cg-header bazi">子平八字</div>
 
                     <!-- Row 1 -->
                     <div class="cg-cell cg-label">核心地位</div>
                     <div class="cg-cell"><span class="tag tag-orange">实时微观决策支持</span>基于当前时间起局，判断特定单一事件</div>
                     <div class="cg-cell"><span class="tag tag-purple">宏观本命结构分析</span>基于出生信息，解读人生倾向与长跨度周期</div>
+                    <div class="cg-cell"><span class="tag tag-mint">能量结构与体用分析</span>基于四柱干支，解释人格动力、资源配置与阶段起伏</div>
 
                     <!-- Row 2 -->
                     <div class="cg-cell cg-label">时间依赖</div>
                     <div class="cg-cell">起局时间（事件发生时）<br><span style="color:#777;font-size:0.8em;margin-top:4px;">需精确到当前此时此刻</span></div>
                     <div class="cg-cell">出生时间（本命盘固定）<br><span style="color:#777;font-size:0.8em;margin-top:4px;">时辰不准则只能提供差异盘</span></div>
+                    <div class="cg-cell">出生时间 + 历法口径<br><span style="color:#777;font-size:0.8em;margin-top:4px;">子时换日与节气边界需先选定</span></div>
 
                     <!-- Row 3 -->
                     <div class="cg-cell cg-label cg-row-last">底层工程</div>
                     <div class="cg-cell cg-row-last"><span class="tag tag-green">Python 脚本计算</span>固定计算剥离，不让 AI 心算出错</div>
                     <div class="cg-cell cg-row-last"><span class="tag tag-gray">分段约束的链式生成</span>强制顺序，不满足条件则不强行脑补落星</div>
+                    <div class="cg-cell cg-row-last"><span class="tag tag-mint">强弱-十神-体用链路</span>明确月令、通根、制化顺序，禁止“先结论后取证”</div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Slide 7: Compare Table 2 -->
+    <!-- Slide 8: Compare Table 2 -->
     <section class="slide">
         <div class="slide-content">
             <div class="container">
@@ -685,27 +731,31 @@
                     <div class="cg-header">维度</div>
                     <div class="cg-header qimen">奇门遁甲</div>
                     <div class="cg-header ziwei">紫微斗数</div>
+                    <div class="cg-header bazi">子平八字</div>
 
                     <!-- Row 4 -->
                     <div class="cg-cell cg-label">必答关卡</div>
                     <div class="cg-cell">6个核心问题拦截<br>看什么事·时间·地点·目标·进展·偏好</div>
                     <div class="cg-cell">4轮追问确认<br>重点模块·有无现成盘·出生参数·派系口径</div>
+                    <div class="cg-cell">5项定盘前置确认<br>出生参数·历法口径·子时规则·节气切分·分析流派</div>
 
                     <!-- Row 5 -->
                     <div class="cg-cell cg-label">排雷防坑</div>
                     <div class="cg-cell">默认使用大流 mainline-cn<br>不接受则果断拒绝，不硬排盘</div>
                     <div class="cg-cell">三合 / 飞星派系之争<br>子时换日争议交由用户决定或提供双选项</div>
+                    <div class="cg-cell">旺衰与格局争议并列输出<br>争议规则必须注明来源，不可混口径融合</div>
 
                     <!-- Row 6 -->
                     <div class="cg-cell cg-label cg-row-last">AI 最终输出</div>
                     <div class="cg-cell cg-row-last">方位走位 · 时机卡位 · 行动闭环<br>回答终极一问：能不能成</div>
                     <div class="cg-cell cg-row-last">人格弱点 · 情感事业映射 · 财富承载力<br>大限阶段指引，不提供绝对单据</div>
+                    <div class="cg-cell cg-row-last">体用策略 · 岁运波段 · 风险窗口<br>强调“可操作建议 + 概率边界”，避免宿命表达</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 8: Principles -->
+    <!-- Slide 9: Principles -->
     <section class="slide">
         <div class="slide-content">
             <div class="container container-center">
@@ -734,7 +784,7 @@
         </div>
     </section>
 
-    <!-- Slide 9: Quote -->
+    <!-- Slide 10: Quote -->
     <section class="slide">
         <div class="slide-content">
             <div class="quote-block reveal">
